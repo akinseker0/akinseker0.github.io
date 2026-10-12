@@ -266,41 +266,32 @@ a { color: inherit; }
 .faq-list details[open] summary::after { content: "−"; }
 .faq-list details p { margin: 0 0 20px; max-width: 38rem; color: var(--muted); }
 
-/* fiyatlar */
-.prices, .where {
+/* fiyat al */
+.quote, .where {
   width: min(var(--maxw), calc(100% - 2 * var(--gutter)));
   margin: clamp(56px, 8vw, 104px) auto 0;
   display: grid;
   gap: 24px;
   scroll-margin-top: 96px;
 }
-.prices { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
-.prices h2, .where h2 {
+.quote h2, .where h2 {
   margin: 0 0 20px;
   font-weight: 300;
   font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   line-height: 1.1;
   letter-spacing: -.02em;
 }
-.prices-list { padding: clamp(22px, 3vw, 36px); border-radius: 32px; }
-.prices-list ul { list-style: none; margin: 0; padding: 0; }
-.prices-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 13px 0;
-}
-.prices-list .fill { flex: 1; align-self: center; border-top: 1px dotted rgba(38, 33, 29, .28); transform: translateY(2px); }
-.prices-list .price { font-weight: 500; font-variant-numeric: tabular-nums; }
-
-.prices-aside {
+.quote-card {
   display: grid;
-  gap: 12px;
-  padding: clamp(22px, 3vw, 32px);
-  border-radius: 32px 12px 32px 32px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px clamp(24px, 5vw, 80px);
+  padding: clamp(26px, 4vw, 48px);
+  border-radius: 40px 14px 40px 40px;
 }
-.prices-aside h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 4px; }
-.prices-aside p { margin: 0 0 8px; color: var(--muted); }
+.quote-text h2 { margin-bottom: 10px; }
+.quote-text p { margin: 0; max-width: 36rem; color: var(--muted); }
+.quote-actions { display: grid; gap: 12px; min-width: 240px; }
 
 /* konum */
 .where { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); align-items: stretch; }
@@ -348,7 +339,8 @@ a { color: inherit; }
 @media (max-width: 1080px) {
   .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "stage" "quick"; }
   .quick { grid-template-columns: repeat(3, minmax(0, 1fr)); align-self: stretch; margin-top: 8px; }
-  .prices { grid-template-columns: minmax(0, 1fr); }
+  .quote-card { grid-template-columns: minmax(0, 1fr); }
+  .quote-actions { min-width: 0; }
   .where { grid-template-columns: minmax(0, 1fr); }
   .about, .faq { grid-template-columns: minmax(0, 1fr); row-gap: 20px; }
 }
