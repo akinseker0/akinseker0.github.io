@@ -206,9 +206,65 @@ a { color: inherit; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.card h3 { grid-area: title; margin: 0; font-size: 1.2rem; font-weight: 500; line-height: 1.2; }
+.card .card-title { grid-area: title; margin: 0; font-size: 1.2rem; font-weight: 500; line-height: 1.2; }
 .card p { grid-area: price; margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
 .card .btn { grid-area: btn; margin-top: 14px; width: 100%; }
+
+/* hizmet metinleri ve sorular */
+.about, .faq {
+  width: min(var(--maxw), calc(100% - 2 * var(--gutter)));
+  margin: clamp(56px, 8vw, 104px) auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  column-gap: clamp(24px, 5vw, 80px);
+  align-items: start;
+  scroll-margin-top: 96px;
+}
+.about h2, .faq h2 {
+  margin: 0 0 18px;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+.about-head p { margin: 0; max-width: 30rem; color: var(--muted); }
+.about-list { list-style: none; margin: 0; padding: 0; }
+.about-list li { padding: 20px 0; border-top: 1px solid rgba(38, 33, 29, .14); }
+.about-list li:last-child { border-bottom: 1px solid rgba(38, 33, 29, .14); }
+.about-list h3 { margin: 0 0 6px; font-size: 1.25rem; font-weight: 500; line-height: 1.25; }
+.about-list p { margin: 0; max-width: 38rem; color: var(--muted); }
+
+.faq h2 { margin-bottom: 0; }
+.faq-list details { border-top: 1px solid rgba(38, 33, 29, .14); }
+.faq-list details:last-child { border-bottom: 1px solid rgba(38, 33, 29, .14); }
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .7);
+  border: 1px solid var(--glass-edge);
+  font-weight: 400;
+  line-height: 1;
+}
+.faq-list details[open] summary::after { content: "−"; }
+.faq-list details p { margin: 0 0 20px; max-width: 38rem; color: var(--muted); }
 
 /* fiyatlar */
 .prices, .where {
@@ -294,6 +350,7 @@ a { color: inherit; }
   .quick { grid-template-columns: repeat(3, minmax(0, 1fr)); align-self: stretch; margin-top: 8px; }
   .prices { grid-template-columns: minmax(0, 1fr); }
   .where { grid-template-columns: minmax(0, 1fr); }
+  .about, .faq { grid-template-columns: minmax(0, 1fr); row-gap: 20px; }
 }
 
 @media (max-width: 760px) {
