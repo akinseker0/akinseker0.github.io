@@ -256,23 +256,41 @@
       </ul>
     </section>
 
-    <section class="work" id="isler">
+    <section class="work" id="isler" data-slider>
       <div class="work-head">
-        <h2>Önce ve sonra</h2>
-        <p>Yıkadığımız koltuk ve yatakların gerçek fotoğrafları.</p>
+        <div>
+          <h2>Önce ve sonra</h2>
+          <p>Yaptığımız işlerden gerçek fotoğraflar.</p>
+        </div>
+        <div class="work-nav">
+          <button type="button" class="work-btn" data-dir="-1" aria-label="Önceki fotoğraflar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="work-btn" data-dir="1" aria-label="Sonraki fotoğraflar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
       </div>
-      <div class="work-grid" role="region" aria-label="Önce ve sonra fotoğrafları" tabindex="0">
+      <div class="work-track" role="region" aria-label="Önce ve sonra fotoğrafları, sağa ve sola kaydırın" tabindex="0">
         <figure>
           <img src="assets/is-berjer.webp" width="510" height="510" loading="lazy" alt="Beyaz berjer koltuğun yıkama öncesi lekeli hâli ve buharlı yıkama sonrası temiz hâli">
           <figcaption>Berjer koltuk yıkama</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/is-koltuk-leke.webp" width="510" height="510" loading="lazy" alt="Koltuğun dikiş yerindeki kahverengi lekenin buharlı yıkama öncesi ve sonrası hâli">
+          <figcaption>Koltukta leke temizleme</figcaption>
         </figure>
         <figure>
           <img src="assets/is-arac-koltugu.webp" width="510" height="510" loading="lazy" alt="Araç arka koltuğunun yıkama öncesi lekeli hâli ve yıkama sonrası temiz hâli">
           <figcaption>Araç koltuğu yıkama</figcaption>
         </figure>
         <figure>
+          <img src="assets/is-pembe-koltuk.webp" width="510" height="510" loading="lazy" alt="Bordo kumaş koltuk kolçağının yıkama öncesi lekeli hâli ve buharlı makineyle yıkanışı">
+          <figcaption>Kumaş koltuk yıkama</figcaption>
+        </figure>
+        <figure>
           <img src="assets/is-yatak.webp" width="507" height="510" loading="lazy" alt="Yatakta kan lekesi ve buharlı temizleme makinesiyle lekenin temizlenmesi">
           <figcaption>Yatakta kan lekesi temizleme</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/is-sandalye.webp" width="510" height="510" loading="lazy" alt="Yeşil kadife sandalyenin yıkama öncesi lekeli hâli ve yıkama sonrası temiz hâli">
+          <figcaption>Sandalye yıkama</figcaption>
         </figure>
       </div>
     </section>
@@ -345,6 +363,16 @@
     <a class="btn btn-solid" href="tel:+905526838628">Ara</a>
     <a class="btn btn-glass" href="https://wa.me/905526838628?text=Merhaba%2C%20fiyat%20almak%20istiyorum.">WhatsApp</a>
   </div>
+
+  <dialog class="lightbox" aria-label="Fotoğraf büyütme">
+    <button type="button" class="lb-btn lb-close" aria-label="Kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Önceki fotoğraf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <figure>
+      <img alt="" width="510" height="510">
+      <figcaption></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-next" aria-label="Sonraki fotoğraf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
