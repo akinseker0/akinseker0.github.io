@@ -518,7 +518,14 @@ html.lb-open { overflow: hidden; }
   .nav-pill { display: none; }
   .nav-phone span { display: inline; }
   .brand img { width: 56px; height: 56px; }
-  .eyebrow { font-size: .72rem; letter-spacing: .06em; }
+  .eyebrow {
+    margin-bottom: 14px;
+    font-size: 1rem;
+    line-height: 1.35;
+    letter-spacing: 0;
+    text-transform: none;
+    text-wrap: balance;
+  }
   .service-grid { grid-template-columns: minmax(0, 1fr); }
   .work-track figure { flex-basis: min(78%, 360px); }
   .work-btn { width: 44px; height: 44px; }
