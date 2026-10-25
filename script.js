@@ -38,6 +38,28 @@
   set(50);
 })();
 
+// menüde, ekranda görünen bölümün bağlantısını mavi yapar
+(() => {
+  const links = [...document.querySelectorAll('.nav-pill a')];
+  const targets = links.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+  if (!('IntersectionObserver' in window) || !targets.length) return;
+
+  const activate = (id) => {
+    links.forEach((a) => {
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) activate(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+
+  targets.forEach((target) => observer.observe(target));
+})();
+
 (() => {
   const root = document.querySelector('[data-slider]');
   if (!root) return;
