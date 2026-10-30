@@ -134,12 +134,11 @@ a { color: inherit; }
 
 /* hero */
 .hero {
-  margin-top: clamp(24px, 4vw, 56px);
-  display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-  align-items: center;
-  gap: clamp(20px, 3vw, 48px);
+  margin-top: clamp(32px, 6vw, 88px);
+  padding-bottom: clamp(8px, 2vw, 32px);
+  text-align: center;
 }
+.hero-copy { max-width: 52rem; margin-inline: auto; }
 .eyebrow {
   display: block;
   margin: 0 0 16px;
@@ -159,48 +158,8 @@ a { color: inherit; }
   color: var(--navy);
   text-wrap: balance;
 }
-.lead { margin: 0 0 28px; max-width: 32rem; font-size: 1.125rem; color: var(--text); }
-.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
-
-/* sahne: önce ve sonra kaydırıcısı */
-.stage { position: relative; touch-action: pan-y; }
-.scene { width: 100%; height: auto; }
-
-.tag {
-  position: absolute;
-  bottom: 7%;
-  padding: 5px 14px;
-  border-radius: 999px;
-  font-size: .85rem;
-  font-weight: 700;
-  color: var(--navy);
-  background: rgba(255, 255, 255, .9);
-  box-shadow: var(--shadow-sm);
-  pointer-events: none;
-}
-.tag-before { left: 13%; }
-.tag-after { left: 45%; }
-
-.compare-hit {
-  position: absolute;
-  left: 10.3%;
-  width: 53.8%;
-  top: 38.8%;
-  height: 47%;
-  cursor: ew-resize;
-  touch-action: pan-y;
-}
-.compare-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
-}
-.stage:has(.compare-input:focus-visible) .handle-ring { stroke: var(--blue); stroke-opacity: 1; stroke-width: 3; }
+.lead { margin: 0 auto 28px; max-width: 36rem; font-size: 1.125rem; color: var(--text); }
+.cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
 /* bölüm başlıkları */
 .services, .work, .quote, .faq, .where, .foot {
@@ -494,17 +453,9 @@ html.lb-open { overflow: hidden; }
 /* mobil alt çubuk */
 .dock { display: none; }
 
-/* açılış hareketi: sahne bir kez yerine oturur */
-@media (prefers-reduced-motion: no-preference) {
-  .drop { animation: settle .9s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 110ms); }
-  @keyframes settle { from { opacity: 0; transform: translateY(-22px); } to { opacity: 1; transform: none; } }
-}
-
 @media (max-width: 1080px) {
   .nav-phone span { display: none; }
   .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero-copy { max-width: 40rem; }
   .quote-card { grid-template-columns: minmax(0, 1fr); }
   .quote-actions { min-width: 0; }
   .where { grid-template-columns: minmax(0, 1fr); }
@@ -529,7 +480,6 @@ html.lb-open { overflow: hidden; }
   .service-grid { grid-template-columns: minmax(0, 1fr); }
   .work-track figure { flex-basis: min(78%, 360px); }
   .work-btn { width: 44px; height: 44px; }
-  .tag { font-size: .78rem; padding: 3px 10px; }
   .foot-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .foot-contact { align-items: flex-start; text-align: left; }
   .foot-links { align-items: flex-start; text-align: left; }
